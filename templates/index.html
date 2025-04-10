@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Attendance Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Attendance Calculator</h1>
+        <form method="POST">
+            <label>Classes Attended:</label>
+            <input type="number" name="attended" required>
+
+            <label>Total Classes:</label>
+            <input type="number" name="total" required>
+
+            <label>Minimum Attendance Required:</label>
+            <select name="required">
+                {% for percent in [60, 65, 70, 75, 80, 85, 90, 95] %}
+                    <option value="{{ percent }}">{{ percent }}%</option>
+                {% endfor %}
+            </select>
+
+            <button type="submit">Calculate</button>
+        </form>
+
+        {% if result %}
+            <div class="result">{{ result|safe }}</div>
+        {% endif %}
+        {% if extra_info %}
+            <div class="extra">{{ extra_info|safe }}</div>
+        {% endif %}
+    </div>
+</body>
+</html>
