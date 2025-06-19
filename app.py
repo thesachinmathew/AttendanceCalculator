@@ -1,8 +1,6 @@
 from flask import Flask, render_template, request
 import math
-
 app = Flask(__name__)
-
 @app.route("/", methods=["GET", "POST"])
 def index():
     result = None
