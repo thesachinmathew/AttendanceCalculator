@@ -40,7 +40,6 @@ def index():
                     max_bunks = max(0, max_bunks)
                     
                     if max_bunks > 0:
-                        # Verify calculation
                         future_total = total + max_bunks
                         future_percent = round((attended / future_total) * 100, 2)
                         bunk_info = f"🎯 You can bunk up to {max_bunks} more classes and still maintain {min_percent}% attendance (will drop to {future_percent}%)"
