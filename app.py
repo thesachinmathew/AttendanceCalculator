@@ -13,7 +13,6 @@ def index():
             total = int(request.form["total"])
             min_percent = int(request.form["min_percent"])
 
-            # Validation
             if total <= 0:
                 result = "Total classes must be greater than zero."
                 result_class = "error"
