@@ -49,7 +49,6 @@ def index():
                         bunk_info = "⚠️ You cannot bunk any more classes without falling below the requirement"
                         
                 else:
-                    # Calculate needed classes
                     numerator = min_percent * total - 100 * attended
                     denominator = 100 - min_percent
                     
