@@ -33,7 +33,6 @@ def index():
                     result = f"🎉 Great! Your current attendance is {current_percent}%. You already meet the {min_percent}% requirement!"
                     result_class = "success"
                     
-                    # Calculate how many classes can be bunked
                     # Formula: (attended - min_percent/100 * (total + bunks)) >= 0
                     # Solving: bunks <= (100 * attended - min_percent * total) / min_percent
                     max_bunks = math.floor((100 * attended - min_percent * total) / min_percent)
